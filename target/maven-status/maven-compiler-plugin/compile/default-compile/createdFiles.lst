@@ -1,0 +1,3 @@
+com\amazonaws\lambda\demo\MyLambdaRequest.class
+com\amazonaws\lambda\demo\LambdaFunctionHandler.class
+com\amazonaws\lambda\demo\MyLambdaResponse.class
