@@ -13,10 +13,12 @@ public class LambdaFunctionHandler implements RequestHandler<Object, MyLambdaRes
     public MyLambdaResponse handleRequest(Object input, Context context) {
     	Gson gson = new Gson();
     	String json = gson.toJson(input);
-    	context.getLogger().log("Input: " + input);
+    	Pessoa pessoa = gson.fromJson(json, Pessoa.class);
+    	
+    	context.getLogger().log("Input: ");
         MyLambdaResponse lambdaResponse = new MyLambdaResponse();
         try {
-            lambdaResponse.setResponseMessage("Hello " + input);
+            lambdaResponse.setResponseMessage("Hello " +pessoa.getNome()+" cuja idade é: "+ pessoa.getIdade());
             lambdaResponse.setTransactionID(UUID.randomUUID().toString());
         } catch (Exception e) {
             e.printStackTrace();
