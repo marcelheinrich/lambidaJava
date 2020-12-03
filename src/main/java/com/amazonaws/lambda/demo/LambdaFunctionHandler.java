@@ -18,7 +18,8 @@ public class LambdaFunctionHandler implements RequestHandler<Object, MyLambdaRes
     	context.getLogger().log("Input: ");
         MyLambdaResponse lambdaResponse = new MyLambdaResponse();
         try {
-            lambdaResponse.setResponseMessage("Hello " +pessoa.getNome()+" cuja idade é: "+ pessoa.getIdade());
+            lambdaResponse.setResponseMessage("Hello " +pessoa.getNome()+" cuja idade é: "+ pessoa.getIdade()
+            +" separando a lista dos guri"+pessoa.getLista());
             lambdaResponse.setTransactionID(UUID.randomUUID().toString());
         } catch (Exception e) {
             e.printStackTrace();
